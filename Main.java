@@ -43,7 +43,10 @@ public class Main {
 			 	indexOfCheck ++;
 		 }
 		
-		word.replaceAll(" ", "");
+		while(word.indexOf("#") !=-1)
+				{
+					word=word.substring(0,word.indexOf("#")) + word.substring(word.indexOf("#")+1) ;
+				}
 		visited.clear();
 		System.out.println(word);
 	}
@@ -102,7 +105,7 @@ public class Main {
 	        			 {
 	        				 while(replace[i].length()<check[i].length())
 	        				 {
-	        					 replace[i]=replace[i]+" ";
+	        					 replace[i]=replace[i]+"#";
 	        					 
 	        				 }
 	        			 }
